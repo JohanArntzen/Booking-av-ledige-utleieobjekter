@@ -23,6 +23,12 @@ h1 {
   background: #e5e7eb;
 }
 
+.ferier button.aktiv {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
 
 #utleieobjekt {
   max-width: 1100px;
