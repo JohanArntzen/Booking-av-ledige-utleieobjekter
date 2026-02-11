@@ -1,0 +1,59 @@
+{
+  "hytter": [
+    {
+      "navn": "Granstua",
+      "utleie": {
+        "jul": true,
+        "vinter": true,
+        "påske": false
+      },
+      "sengeplasser": 4,
+      "standard": "Høy",
+      "badstue": true,
+      "ukepris": 12000,
+      "bilder": ["URL"]
+    },
+
+    {
+      "navn": "Granbo",
+      "utleie": {
+        "jul": false,
+        "vinter": false,
+        "påske": true
+      },
+      "sengeplasser": 6,
+      "standard": "Middels",
+      "badstue": false,
+      "ukepris": 15000,
+      "bilder": ["URL"]
+    },
+
+    {
+      "navn": "Grantoppen",
+      "utleie": {
+        "jul": true,
+        "vinter": false,
+        "påske": true
+      },
+      "sengeplasser": 8,
+      "standard": "lav",
+      "badstue": false,
+      "ukepris": 16000,
+      "bilder": ["URL"]
+    }, 
+
+    {
+      "navn": "Granhaug",
+      "utleie": {
+        "jul": true,
+        "vinter": false,
+        "påske": true
+      },
+      "sengeplasser": 10,
+      "standard": "Høy",
+      "badstue": true,
+      "ukepris": 30000,
+      "bilder": ["URL"]
+    }
+  ]
+}
