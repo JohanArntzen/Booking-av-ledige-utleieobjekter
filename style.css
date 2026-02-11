@@ -119,17 +119,17 @@ h1 {
 }
 
 .footer {
-    display: flex;
-    flex-direction: column; /* Legger ting under hverandre */
-    align-items: center;    /* Sentrerer horisontalt */
-    justify-content: center; /* Sentrerer vertikalt */
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-top: 1px solid #ccc;
-    text-align: center;
+  display: flex;
+  flex-direction: column; /* Legger ting under hverandre */
+  align-items: center;    /* Sentrerer horisontalt */
+  justify-content: center; /* Sentrerer vertikalt */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ccc;
+  text-align: center;
 }
 
 .footer a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
