@@ -62,6 +62,7 @@ function renderHytter(hytter, container, templateKort) {
     const badstue = card.querySelector('.objekt-badstue');
     const pris = card.querySelector('.objekt-pris');
     const bilde = card.querySelector('.objekt-bilde');
+    const bookBtn = card.querySelector('.objekt-book-btn');
 
     if (navn) navn.textContent = hytte.navn || '';
     if (standard) standard.textContent = `Standard: ${hytte.standard}`;
@@ -79,8 +80,30 @@ function renderHytter(hytter, container, templateKort) {
         bilde.textContent = 'Bilde kommer';
       }
     }
-
+    if (bookBtn) {
+      if (!aktivPeriode) {
+        bookBtn.disabled = true;
+        bookBtn.textContent = 'Velg ferie først';
+      } else {
+        bookBtn.disabled = false;
+        bookBtn.textContent = 'Book';
+        bookBtn.addEventListener('click', () => bookHytte(hytte, card, bookBtn));
+      }
+    }
     container.appendChild(card);
   });
+}
+
+function bookHytte(hytte, card, button) {
+  const bekreftet = window.confirm(
+    `Vil du booke ${hytte.navn} for ${hytte.ukepris} kr / uke?`
+  );
+  if (!bekreftet) return;
+
+  button.disabled = true;
+  button.textContent = 'Booket';
+  card.classList.add('booket');
+
+  alert(`Du har booket ${hytte.navn}!`);
 }
 
