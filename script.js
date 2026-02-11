@@ -1,9 +1,21 @@
+let alleHytter = [];
+let container, templateKort;
+let aktivPeriode = null;
+
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('utleieobjekt');
+  container = document.getElementById('utleieobjekt');
   if (!container) return;
 
-  const templateKort = container.querySelector('.objekt-kort');
+  templateKort = container.querySelector('.objekt-kort');
   if (!templateKort) return;
+
+  const julBtn = document.querySelector('.Jul');
+  const påskeBtn = document.querySelector('.Påske');
+  const vinterBtn = document.querySelector('.Vinter');
+
+  if (julBtn) julBtn.addEventListener('click', () => filtrerHytter('jul', julBtn));
+  if (påskeBtn) påskeBtn.addEventListener('click', () => filtrerHytter('påske', påskeBtn));
+  if (vinterBtn) vinterBtn.addEventListener('click', () => filtrerHytter('vinter', vinterBtn));
 
   fetch('hytter.json')
     .then((response) => {
@@ -14,12 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then((data) => {
       if (!data || !Array.isArray(data.hytter)) return;
-      renderHytter(data.hytter, container, templateKort);
+      alleHytter = data.hytter;
+      renderHytter(alleHytter, container, templateKort);
     })
     .catch((error) => {
       console.error(error);
     });
 });
+
+function filtrerHytter(periode, knapp) {
+  document.querySelectorAll('.ferier button').forEach(btn => btn.classList.remove('aktiv'));
+
+  if (aktivPeriode === periode) {
+    aktivPeriode = null;
+    renderHytter(alleHytter, container, templateKort);
+  } else {
+    aktivPeriode = periode;
+    knapp.classList.add('aktiv');
+    const filtrerte = alleHytter.filter((hytte) => {
+      return hytte.utleie && hytte.utleie[periode] === false;
+    });
+    renderHytter(filtrerte, container, templateKort);
+  }
+}
 
 function renderHytter(hytter, container, templateKort) {
   container.innerHTML = '';
