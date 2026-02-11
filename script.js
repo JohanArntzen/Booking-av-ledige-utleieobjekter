@@ -34,22 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function filtrerHytter(periode, knapp) {
-  document.querySelectorAll('.ferier button').forEach(btn => btn.classList.remove('aktiv'));
-
-  if (aktivPeriode === periode) {
-    aktivPeriode = null;
-    renderHytter(alleHytter, container, templateKort);
-  } else {
-    aktivPeriode = periode;
-    knapp.classList.add('aktiv');
-    const filtrerte = alleHytter.filter((hytte) => {
-      return hytte.utleie && hytte.utleie[periode] === false;
-    });
-    renderHytter(filtrerte, container, templateKort);
-  }
-}
-
 function renderHytter(hytter, container, templateKort) {
   container.innerHTML = '';
 
@@ -92,6 +76,22 @@ function renderHytter(hytter, container, templateKort) {
     }
     container.appendChild(card);
   });
+}
+
+function filtrerHytter(periode, knapp) {
+  document.querySelectorAll('.ferier button').forEach(btn => btn.classList.remove('aktiv'));
+
+  if (aktivPeriode === periode) {
+    aktivPeriode = null;
+    renderHytter(alleHytter, container, templateKort);
+  } else {
+    aktivPeriode = periode;
+    knapp.classList.add('aktiv');
+    const filtrerte = alleHytter.filter((hytte) => {
+      return hytte.utleie && hytte.utleie[periode] === false;
+    });
+    renderHytter(filtrerte, container, templateKort);
+  }
 }
 
 function bookHytte(hytte, card, button) {
