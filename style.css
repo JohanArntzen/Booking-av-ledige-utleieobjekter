@@ -1,3 +1,11 @@
+body {
+  font-family: "roboto", sans-serif;
+  background: #f1f1f1;
+  color: #111827;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   text-align: center;
   margin: 24px 0 16px;
@@ -23,9 +31,15 @@ h1 {
   background: #e5e7eb;
 }
 
+.ferier button.aktiv {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
 
 #utleieobjekt {
-  max-width: 1100px;
+  max-width: 80%;
   margin: 0 auto 40px;
   padding: 0 16px 32px;
   display: grid;
@@ -36,17 +50,23 @@ h1 {
 .objekt-kort {
   overflow: hidden;
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  max-width: 300px;
 }
 
 .objekt-navn {
   font-size: 20px;
   margin: 16px 16px 0;
+  margin-bottom: 5px;
 }
 
 .objekt-bilde img {
-  width: 100%;
+  width: 90%;
   height: 100%;
+  padding-left: 5%;
   object-fit: cover;
 }
 
@@ -73,7 +93,7 @@ h1 {
 }
 
 .objekt-book-btn {
-  padding: 6px 14px;
+  padding: 8px 24px;
   border-radius: 999px;
   border: none;
   background: #2563eb;
@@ -83,7 +103,8 @@ h1 {
 }
 
 .objekt-book-btn:hover {
-  background: #1d4ed8;
+  transform: scale(1.1);
+  background: #1748cf;
 }
 
 .footer {
