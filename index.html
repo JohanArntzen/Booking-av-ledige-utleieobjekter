@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking av ledige utleieobjekter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Booking av utleieobjekter</h1>
+
+    <div class="ferier">
+        <button class="Jul">Jul</button>
+        <button class="Påske">Påske</button>
+        <button class="Sommer">Sommer</button>
+    </div>
+
+    <div id="utleieobjekt">
+        <div class="objekt-kort">
+            <h1 class="objekt-navn"></h1>
+            <div class="objekt-bilde"></div>
+            <div class="objekt-info">
+                <h3 class="objekt-sted"></h3>
+                <p class="objekt-standard"></p>
+                <p class="objekt-antall-senger"></p>
+                <p class="objekt-badstue"></p>
+                <p class="objekt-beskrivelse"></p>
+                <div class="objekt-footer">
+                    <span class="objekt-pris"></span>
+                    <button type="button" class="objekt-book-btn">Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
