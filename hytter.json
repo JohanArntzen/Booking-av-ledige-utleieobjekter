@@ -11,7 +11,7 @@
       "standard": "Høy",
       "badstue": true,
       "ukepris": 12000,
-      "bilder": ["URL"]
+      "bilder": ["/Bilder/Granstua.jpg"]
     },
 
     {
@@ -25,7 +25,7 @@
       "standard": "Middels",
       "badstue": false,
       "ukepris": 15000,
-      "bilder": ["URL"]
+      "bilder": ["/Bilder/Granbo.jpg"]
     },
 
     {
@@ -39,7 +39,7 @@
       "standard": "lav",
       "badstue": false,
       "ukepris": 16000,
-      "bilder": ["URL"]
+      "bilder": ["/Bilder/Grantoppen.jpg"]
     }, 
 
     {
@@ -53,7 +53,7 @@
       "standard": "Høy",
       "badstue": true,
       "ukepris": 30000,
-      "bilder": ["URL"]
+      "bilder": ["/Bilder/Granhaug.jpg"]
     }
   ]
 }
