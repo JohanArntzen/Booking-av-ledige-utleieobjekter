@@ -70,7 +70,7 @@ function renderHytter(hytter, container, templateKort) {
     if (badstue) badstue.textContent = `Badstue: ${hytte.badstue ? 'Ja' : 'Nei'}`;
     if (pris) pris.textContent = `${hytte.ukepris} kr / uke`;
     if (bilde) {
-      if (Array.isArray(hytte.bilder) && hytte.bilder.length > 0 && hytte.bilder[0] !== 'URL') {
+      if (Array.isArray(hytte.bilder) && hytte.bilder.length > 0) {
         const img = document.createElement('img');
         img.src = hytte.bilder[0];
         img.alt = hytte.navn || 'Hyttebilde';
